@@ -1,0 +1,158 @@
+const char* HTML_CONTENT = R""""(
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arduino Api Controlador</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Dosis", sans-serif;
+            background-color: #1F2A13;
+            color: #fff;
+        }
+
+        main {
+            padding-top: 30px;
+            text-align: center;
+            align-items: center;
+            background-color: #344620;
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+
+        .img-fluid {
+            width: 300px;
+            height: auto;
+        }
+
+        nav,
+        footer {
+            background-color: #BC6C25;
+            color: #FEFAE0;
+            text-align: center;
+        }
+
+        .option,
+        .btn {
+            background-color: #606C38;
+            font-size: 25px;
+        }
+
+        .btn:hover {
+            background-color: #90A746;
+        }
+
+        .btn-wide {
+            width: 90%;
+        }
+
+        #giro {
+            font-size: 25px;
+        }
+
+        #barca {
+            width: 100px;
+        }
+    </style>
+    <nav class="container-fluid py-3 mb-5">
+        <h1>Arduino - Control de motor remoto</h1>
+    </nav>
+    <main class="container">
+        <h3>Presione un botón para controlar la dirección de giro</h3>
+        <div class="container row my-3">
+            <div class="col-sm-5">
+                <a href="http://192.168.1.2/motor/izq" class="btn btn-wide text-light">◄ Izquierda</a>
+            </div>
+            <div class="col-sm-2">
+                <a href="http://192.168.1.2/motor/stop" class="btn btn-wide text-light">Pausar</a>
+            </div>
+            <div class="col-sm-5">
+                <a href="http://192.168.1.2/motor/der" class="btn btn-wide text-light">Derecha ►</a>
+            </div>
+        </div>
+        <p id="giro">GIRO</p>
+        <a class="btn text-light btn-wide mt-5 mb-2" href="http://192.168.1.2/modo">
+            MODO
+        </a>
+        <div class="p-3">
+            <a href="https://imgbb.com/"><img src="https://i.ibb.co/PsQvrh54/sensor.png" alt="sensor" border="0" /></a>
+            <h5>Distancia registrada por sensor ultrasónico</h5>
+            <p>DISTANCIA</p>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+                <div class="card">
+                    <img src="https://i.ibb.co/20hdSd1V/1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Daniel Enrique Flores Lino FL220294</h5>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://i.ibb.co/SpVTnRr/2.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Gabriela Abigail Chavez Recinos CR241682</h5>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://i.ibb.co/rfGJBt2S/3.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Christian Javier Rosales Palacios RP241102</h5>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://i.ibb.co/rKXkrmK9/yo.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Luis Enrique Cartagena Arteaga CA241136</h5>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <img src="https://upload.wikimedia.org/wikipedia/sco/thumb/4/47/FC_Barcelona_%28crest%29.svg/2020px-FC_Barcelona_%28crest%29.svg.png"
+            class="img-fluid mb-3" id="barca">
+        <br>
+    </main>
+    <footer class="mt-5 py-3">
+        <div>
+            <p style="text-align: center;">&copy; 2025 Arduino API IOT</p>
+            <h4>Integrantes</h4>
+            <p>Luis Enrique Cartagena Arteaga CA241136</p>
+            <p>Christian Javier Rosales Palacios RP241102</p>
+            <p>Daniel Enrique Flores Lino FL220294</p>
+            <p>Gabriela Abigail Chavez Recinos CR241682</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+)"""";
